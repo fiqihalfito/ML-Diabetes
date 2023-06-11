@@ -6,9 +6,6 @@ Diabetes adalah penyakit kronis yang ditandai dengan kadar gula darah yang tingg
 
 Pengembangan model *machine learning* yang dapat memprediksi diabetes berdasarkan data klinis individu telah menjadi fokus penelitian yang signifikan. Tujuan utama dari pengembangan model ini adalah untuk membangun sistem yang dapat mengklasifikasikan dengan akurat apakah seseorang mengalami diabetes atau tidak.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-
 Penyakit diabetes dapat mengakibatkan komplikasi penyakit, yang tentunya sangat berbahaya terhadap penderita diabetes. Oleh karena itu, sangat diperlukanya suatu teknologi yang dapat mendeteksi penyakit diabetes dengan tingkat analisis yang akurat, sehingga penyakit diabetes dapat ditangani lebih awal untuk mengurangi jumlah penderita, kecacatan, dan kematian. Karena efek diabetes dapat menyebabkan komplikasi bahkan kematian, dibutukan model prediksi untuk mengklasifikasikan seseorang mengidap penyakit diabetes untuk mengetahui seseorang mengidap penyakit diabetes atau tidak secara cepat.[1]
 
 ## Business Understanding
@@ -26,8 +23,6 @@ Untuk  menjawab pertanyaan tersebut, Anda akan membuat predictive modelling deng
 
 - Mengetahui fitur yang paling berkorelasi atau berpengaruh terhadap status diabetes seseorang.
 - Membuat model *machine learning* yang dapat memprediksi seseorang mengalami diabetes atau tidak dengan seakurat mungkin berdasarkan fitur-fitur yang ada.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
 
 ### Solution statements
 
@@ -56,8 +51,6 @@ Data yang digunakan dalam proyek ini adalah [**Dataset Prediksi Diabetes**](http
 
 - Blood Glucose Level: Tingkat glukosa darah mengacu pada jumlah glukosa (gula) yang ada dalam darah pada waktu tertentu. Peningkatan kadar glukosa darah, terutama dalam keadaan puasa atau setelah mengonsumsi karbohidrat, dapat mengindikasikan gangguan regulasi glukosa dan meningkatkan risiko diabetes. Pemantauan rutin kadar glukosa darah penting dalam diagnosis dan pengelolaan diabetes
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
 
 Terdapat beberapa tahapan dalam memahami dataset tersebut, yaitu:
 
@@ -77,17 +70,23 @@ Terdapat beberapa tahapan dalam memahami dataset tersebut, yaitu:
 
 3. *Univariate Analysis*
 
-    *Univariate analysis*, atau analisis univariat, adalah metode analisis statistik yang digunakan untuk memahami dan menganalisis satu fitur pada satu waktu. Tujuan utama dari analisis univariat adalah untuk mendapatkan wawasan dan pemahaman yang mendalam tentang suatu fitur secara terpisah. Pada kasus ini digunakan diagram batang dan histogram untuk menganalisis univariat.
+    *Univariate analysis*, atau analisis univariat, adalah metode analisis statistik yang digunakan untuk memahami dan menganalisis satu fitur pada satu waktu.     Tujuan utama dari analisis univariat adalah untuk mendapatkan wawasan dan pemahaman yang mendalam tentang suatu fitur secara terpisah. Pada kasus ini digunakan diagram batang dan histogram untuk menganalisis univariat.
 
     analisis univariate dibagi menjadi dua yaitu analisis fitur kategorial dan fitur numerik. fitur kategorial disini terdiri dari fitur ``'gender', 'hypertension', 'heart_disease', 'smoking_history', 'diabetes'``. Untuk fitur numerik terdiri dari fitur ``'age', 'bmi', 'HbA1c_level', 'blood_glucose_level'``.
 
     Dari hasil analisis, maka diperoleh kesimpulan sebagai berikut:
 
-    1. fitur `gender`. Dari seluruh pasien, jumlah perempuan lebih banyak dibandingan dengan laki-laki.
-    2. fitur `hypertension`. Dari seluruh pasien, pasien dengan kondisi hipertensi hanya sedikit, sebesar 7.8% saja.
-    3. fitur `heart_disease`. Dari seluruh pasien, pasien yang mempunyai penyakit jantung sangat sedikit yaitu sebesar 4.1%.
-    4. fitur `smoking_history`. Dari seluruh pasien, 70% pasien tidak pernah merokok.
-    5. fitur `diabetes`. Dari seluruh pasien, pasien yang mengalami diabetes sebesar 8.8%.
+    1. fitur `gender`. 
+    
+    ![Screenshot_20230611_215522](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/557902dc-33f3-4001-b90c-40cc33e67459)
+    
+    Gambar 1. Analisis univariat fitur *gender*
+    
+    3. Dari seluruh pasien, jumlah perempuan lebih banyak dibandingan dengan laki-laki.
+    4. fitur `hypertension`. Dari seluruh pasien, pasien dengan kondisi hipertensi hanya sedikit, sebesar 7.8% saja.
+    5. fitur `heart_disease`. Dari seluruh pasien, pasien yang mempunyai penyakit jantung sangat sedikit yaitu sebesar 4.1%.
+    6. fitur `smoking_history`. Dari seluruh pasien, 70% pasien tidak pernah merokok.
+    7. fitur `diabetes`. Dari seluruh pasien, pasien yang mengalami diabetes sebesar 8.8%.
      
     
 4. *Bivariate Analysis*
