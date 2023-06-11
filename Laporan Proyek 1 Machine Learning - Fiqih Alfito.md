@@ -86,7 +86,7 @@ Terdapat beberapa tahapan dalam memahami dataset tersebut, yaitu:
     
         Gambar 1. Analisis univariat fitur `gender`
     
-        Tabel 1. Hasil analisis univariat fitur *gender*
+        Tabel 1. Hasil analisis univariat fitur `gender`
     
         |               | jumlah sampel | persentase |
         | ------------- | ------------- | ---------- |
@@ -159,7 +159,7 @@ Terdapat beberapa tahapan dalam memahami dataset tersebut, yaitu:
         | 1 | 8482          | 8.8        |
                
         
-        Berdasarkan gambar 5 diatas. Dari seluruh pasien, jumlah pasien yang menderita diabetes lebih sedikit dari pada pasien yang tidak menderita diabetes. Berdasarkan tabel 5, pasien yang tidak menderita diabetes sebesar 91.2% dam 8.8% adalah pasien yang menderita diabetes.
+        Berdasarkan gambar 5 diatas. Dari seluruh pasien, jumlah pasien yang menderita diabetes lebih sedikit dari pada pasien yang tidak menderita diabetes. Berdasarkan tabel 5, pasien yang tidak menderita diabetes sebesar 91.2% dan 8.8% adalah pasien yang menderita diabetes.
      
     
 4. *Bivariate Analysis*
@@ -170,35 +170,67 @@ Terdapat beberapa tahapan dalam memahami dataset tersebut, yaitu:
 
     - *Gender* dan *Diabetes*
 
-        Jumlah perempuan dan laki-laki yang mengalami diabetes hampir setara, perempuan sedikit lebih banyak dari laki-laki.
+        ![Screenshot_20230611_225240](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/b9924089-04bd-46cd-964e-c1393b57e376)
+
+        Gambar 6. Analisis fitur `gender` dan `diabetes` 
+
+        Berdasarkan pada gambar 6 di atas, jumlah perempuan dan laki-laki yang mengalami diabetes hampir setara, perempuan sedikit lebih banyak dari laki-laki.
     
     - *Age* dan *Diabetes*
+    
+        ![Screenshot_20230611_230147](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/4c7d5368-0139-4be6-b71d-8441ac888326)
+        
+        Gambar 7. Analisis fitur `age` dan `diabetes`
 
-        Kecenderungan untuk terkena diabetes perlahan naik dimulai pada usia 30 dan diabetes lebih banyak terjadi pada usia 60 keatas.
+        Berdasarkan pada gambar 7 di atas, kecenderungan untuk terkena diabetes perlahan naik dimulai pada usia 30 dan diabetes lebih banyak terjadi pada usia 60 keatas.
     
     - *Hypertension* dan *Diabetes*
 
-        Pasien yang tidak mengalami hipertensi lebih banyak mengalami diabetes dari pada pasien yang mengalami hipertensi.
+        ![Screenshot_20230611_230219](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/31cd6489-2dfd-44b8-94f7-31e5abbe1cad)
+        
+        Gambar 8. Analisis fitur `hypertension` dan `diabetes`
+
+        Berdasarkan pada gambar 8 di atas, pasien yang tidak mengalami hipertensi lebih banyak mengalami diabetes dari pada pasien yang mengalami hipertensi.
     
     - *Heart Disease* dan *Diabetes*
 
-        Pasien yang tidak memiliki penyakit jantung lebih banyak mengalami diabetes dari pada pasien yang memiliki penyakit jantung.
+        ![Screenshot_20230611_230238](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/f330ef15-a17d-46bd-9327-51839301a16f)
+        
+        Gambar 9. Analisis fitur `heart_disease` dan `diabetes`
+
+        Berdasarkan pada gambar 9 di atas, pasien yang tidak memiliki penyakit jantung lebih banyak mengalami diabetes dari pada pasien yang memiliki penyakit jantung.
     
     - *Smoking History* dan *Diabetes*
 
-        Pasien yang mengalami diabetes sebagian besar yang tidak pernah merokok dan mantan perokok.
+        ![Screenshot_20230611_230259](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/f9af2752-0075-4f34-88ea-2c39d8e26ea4)
+        
+        Gambar 10. Analisis fitur `smoking_history` dan `diabetes`
+
+        Berdasarkan pada gambar 10, pasien yang mengalami diabetes sebagian besar yang tidak pernah merokok dan mantan perokok.
 
     - *Body Mass Index* dan *Diabetes*
 
-        Dengan meningkatnya BMI, peluang untuk terkena diabetes akan meningkat.
+        ![Screenshot_20230611_230317](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/2a6a0631-e759-4e35-840a-17283f8557ab)
+
+        Gambar 11. Analisis fitur `bmi` dan `diabetes`
+
+        Berdasarkan pada gambar 11 di atas, dengan meningkatnya BMI, peluang untuk terkena diabetes akan meningkat.
     
     - *HbA1c Level* dan *Diabetes*
 
-        Dengan meningkat HbA1c Level, peluang untuk terkena diabetes akan meningkat. rata-rata pasien yang mengalami diabetes ketika HbA1c Level sebesar 6 keatas.
+        ![Screenshot_20230611_230336](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/19ce8e7e-5b8b-4739-accc-0f89e2346167)
+
+        Gambar 12. Analisis fitur `HbA1c_Level` dan `diabetes`
+
+        Berdasarkan gambar 12 di atas, dengan meningkat HbA1c Level, peluang untuk terkena diabetes akan meningkat. rata-rata pasien yang mengalami diabetes ketika HbA1c Level sebesar 6 keatas.
     
     - *Blood Glucose Level* dan *Diabetes*
+
+        ![Screenshot_20230611_230356](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/5879e18c-67fd-4bc5-abac-c57604425770)
+
+        Gambar 13. Analisis fitur `blood_glucose_level` dan `diabetes`
     
-        Dengan meningkat Blood Glucose Level, peluang untuk terkena diabetes akan meningkat. rata-rata pasien yang mengalami diabetes ketika Blood Glucose Level sebesar 150 keatas.
+        Berdasarkan gambar 13 di atas, dengan meningkat Blood Glucose Level, peluang untuk terkena diabetes akan meningkat. rata-rata pasien yang mengalami diabetes ketika Blood Glucose Level sebesar 150 keatas.
 
 
 5. *Multivariate Analysis*
