@@ -1,4 +1,4 @@
-# Laporan Proyek Machine Learning - Fiqih Alfito
+# Laporan Proyek 1 Machine Learning - Fiqih Alfito
 
 ## Domain Proyek
 
@@ -9,7 +9,7 @@ Pengembangan model *machine learning* yang dapat memprediksi diabetes berdasarka
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
 
-Penyakit diabetes dapat mengakibatkan komplikasi penyakit, yang tentunya sangat berbahaya terhadap penderita diabetes. Oleh karena itu, sangat diperlukanya suatu teknologi yang dapat mendeteksi penyakit diabetes dengan tingkat analisis yang akurat, sehingga penyakit diabetes dapat ditangani lebih awal untuk mengurangi jumlah penderita, kecacatan, dan kematian. Karena efek diabetes dapat menyebabkan komplikasi bahkan kematian, dibutukan model prediksi untuk mengklasifikasikan seseorang mengidap penyakit diabetes untuk mengetahui seseorang mengidap penyakit diabetes atau tidak secara cepat.[(A. Supandi, 2022)](https://ejournal.indobarunasional.ac.id/index.php/jursima/article/view/396)
+Penyakit diabetes dapat mengakibatkan komplikasi penyakit, yang tentunya sangat berbahaya terhadap penderita diabetes. Oleh karena itu, sangat diperlukanya suatu teknologi yang dapat mendeteksi penyakit diabetes dengan tingkat analisis yang akurat, sehingga penyakit diabetes dapat ditangani lebih awal untuk mengurangi jumlah penderita, kecacatan, dan kematian. Karena efek diabetes dapat menyebabkan komplikasi bahkan kematian, dibutukan model prediksi untuk mengklasifikasikan seseorang mengidap penyakit diabetes untuk mengetahui seseorang mengidap penyakit diabetes atau tidak secara cepat.[1]
 
 ## Business Understanding
 
@@ -298,7 +298,13 @@ Berdasarkan tabel di atas, dapat diambil beberapa kesimpulan:
 
 3. Model Boosting juga menunjukkan tingkat akurasi yang tinggi pada data latihan (0,9709) dan data uji (0,9707). Hal ini menunjukkan bahwa model Boosting mampu memberikan prediksi yang konsisten pada kedua set data tersebut.
 
+## Kesimpulan
+
 Dalam kesimpulan, semua model yang dievaluasi dalam tabel tersebut memiliki tingkat akurasi yang relatif tinggi. Namun, model Random Forest memiliki tingkat akurasi tertinggi pada data latihan, sedangkan model Boosting memiliki tingkat akurasi yang cukup tinggi dan konsisten pada kedua set data. Pilihan model terbaik tergantung pada konteks dan kebutuhan spesifik dari masalah yang dihadapi. Sehingga model terbaik yang dipilih yaitu model *Boosting* karena dapat menunjukan hasil yang konsisten pada evaluasi data uji dan data latih.
+
+## Referensi
+
+[1]     A. Supandi, A. Faqih, and F. Basysyar, "PREDIKSI PENYAKIT DIABETES MENGGUNAKAN MACHINE LEARNING DENGAN ALGORITMA NAIVE BAYES", *JS*, vol. 10, no. 2, pp. 146 - 152, Aug. 2022. [Available](https://ejournal.indobarunasional.ac.id/index.php/jursima/article/view/396)
 
 
 
