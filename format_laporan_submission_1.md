@@ -170,30 +170,138 @@ Berikut persiapan data yang dilakukan yaitu:
 
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+Sebelum memulai *modeling*, siapkan terlebih dahulu *dataframe* untuk menyimpan hasil evaluasi model. Evaluasi model pada proyek ini menggunakan metrik `accuracy`. Dataframe terdiri dari kolom dan baris. Nama kolom terdiri dari `train_accuracy_score` dan `test_accuracy_score`. Nama baris terdiri dari nama-nama algoritma yang digunakan.
+
+Pada tahap *modeling*, digunakan beberapa algoritma klasifikasi untuk memprediksi status diabetes pasien yaitu *K-Nearest Neighbor Classifier*, *Random Forest Classifier*, *Boosting Classifier*.
+
+- **K-Nearest Neighbor Classifier**
+
+    K-Nearest Neighbor (K-NN) Classifier adalah salah satu metode klasifikasi yang populer dalam machine learning. Pendekatan ini digunakan untuk mengklasifikasikan data baru berdasarkan kesamaan atau jaraknya terhadap data yang ada dalam dataset pelatihan. Dalam K-NN, kata "K" mengacu pada jumlah tetangga terdekat yang akan digunakan untuk menentukan kelas atau label data baru.
+
+    Kelebihan K-NN Classifier:
+
+    1. Sederhana dan mudah dipahami: Konsep K-NN relatif sederhana dan mudah dipahami. Hal ini membuatnya cocok untuk pemula dalam machine learning.
+
+    2. Tidak memerlukan proses pembelajaran: K-NN termasuk dalam metode pembelajaran berbasis instansi (instance-based), yang berarti tidak memerlukan proses pelatihan yang kompleks. Model K-NN secara efektif "menghafal" data pelatihan dan menggunakannya langsung saat melakukan prediksi.
+
+    3. Toleran terhadap perubahan data: K-NN dapat dengan mudah menyesuaikan diri dengan perubahan dalam data pelatihan. Jika ada penambahan data baru, model K-NN tidak perlu dilatih ulang, melainkan hanya menambahkan data tersebut ke dataset yang ada.
+
+    Kekurangan K-NN Classifier:
+
+    1. Komputasi yang mahal: Ketika dataset menjadi sangat besar, K-NN dapat menjadi komputasi yang mahal. Menghitung jarak antara data baru dengan setiap titik data dalam dataset pelatihan bisa memakan waktu yang cukup lama.
+
+    2. Sensitif terhadap data yang tidak relevan: K-NN dapat menjadi sensitif terhadap data yang tidak relevan dalam dataset. Data yang tidak relevan dapat menyebabkan distorsi dalam perhitungan jarak dan menghasilkan prediksi yang tidak akurat.
+
+    3. Memerlukan pemrosesan data yang tepat: Sebelum menggunakan K-NN, sering kali diperlukan pemrosesan data untuk menghilangkan atribut yang tidak relevan, mengisi nilai yang hilang, atau melakukan normalisasi. Pemrosesan data yang tepat dapat membantu meningkatkan kinerja K-NN.
+
+    Hasil dari pelatihan model K-NN Classifier pada data latih akan dievaluasi menggunakan metrik `accuracy_score()` dan akan disimpan pada variabel `models.loc['KNN', 'train_accuracy_score']`.
+
+- **Random Forest Classifier**
+
+    Random Forest Classifier adalah sebuah algoritma yang digunakan dalam machine learning untuk melakukan klasifikasi data. Algoritma ini bekerja dengan menggabungkan beberapa pohon keputusan (decision trees) yang bekerja secara independen dan menghasilkan prediksi berdasarkan mayoritas suara atau rata-rata dari prediksi masing-masing pohon.
+
+    Berikut adalah beberapa kelebihan dari Random Forest Classifier:
+
+    1. Akurasi yang Tinggi: Random Forest Classifier sering memberikan hasil yang sangat akurat dalam klasifikasi data. Hal ini disebabkan oleh fakta bahwa algoritma ini menggabungkan prediksi dari banyak pohon keputusan, sehingga dapat mengurangi overfitting dan mengatasi bias yang ada dalam setiap pohon individu.
+
+    2. Toleransi terhadap Fitur Irrelevan: Algoritma ini mampu menangani dataset dengan fitur yang tidak relevan atau tidak penting. Saat membangun setiap pohon keputusan, hanya sebagian kecil dari fitur yang digunakan secara acak untuk membatasi pengaruh fitur yang kurang penting terhadap prediksi.
+
+    3. Keandalan terhadap Noise: Random Forest Classifier dapat menangani dataset yang mengandung noise atau outlier. Ketika prediksi dibuat dengan memperhitungkan mayoritas suara dari pohon-pohon individu, dampak dari data yang salah atau noise dapat dikurangi.
+
+    4. Kecepatan dan Skalabilitas: Algoritma ini dapat bekerja dengan cepat pada dataset besar dan memiliki kemampuan untuk memproses banyak fitur. Dengan mengoptimalkan paralelisme, Random Forest Classifier dapat dijalankan secara efisien pada sistem dengan sumber daya yang cukup.
+
+    Namun, Random Forest Classifier juga memiliki beberapa kelemahan:
+
+    1. Tidak Interpretatif: Hasil dari Random Forest Classifier mungkin sulit diinterpretasikan. Karena algoritma ini menggabungkan prediksi dari banyak pohon keputusan, sulit untuk menguraikan bagaimana setiap fitur berkontribusi terhadap prediksi akhir.
+
+    2. Kompleksitas Model: Random Forest Classifier membangun banyak pohon keputusan, yang dapat menyebabkan kompleksitas model yang tinggi. Hal ini dapat menyebabkan waktu pelatihan yang lama, terutama untuk dataset yang besar, serta memerlukan sumber daya komputasi yang cukup tinggi.
+
+    3. Overfitting pada Data dengan Fitur Lebih Banyak: Jika dataset memiliki jumlah fitur yang sangat besar dibandingkan dengan jumlah sampel, Random Forest Classifier dapat mengalami overfitting. Dalam kasus ini, algoritma cenderung terlalu menyesuaikan diri dengan data pelatihan dan kinerjanya pada data yang tidak dikenal dapat menurun.
+
+    4. Pengaturan Parameter yang Penting: Random Forest Classifier memiliki beberapa parameter yang perlu dikonfigurasi dengan benar, seperti jumlah pohon dalam ensemble dan kedalaman maksimum setiap pohon. Pengaturan parameter yang tidak tepat dapat mempengaruhi kinerja model secara keseluruhan.
+
+    Hasil dari pelatihan model Random Forest Classifier pada data latih akan dievaluasi menggunakan metrik `accuracy_score()` dan akan disimpan pada variabel `models.loc['RandomForest', 'train_accuracy_score']`.
+
+- **Boosting Classifier**
+
+    Ada beberapa jenis pada algoritma *boosting*. Dalam penelitian ini dipakai algoritma *AdaBoostClassifier*. 
+    AdaBoostClassifier adalah algoritma pembelajaran mesin yang digunakan untuk klasifikasi. Ini adalah jenis algoritma ensemble yang menggabungkan beberapa model pembelajaran mesin sederhana, yang disebut "weak learners", untuk membentuk model prediksi yang lebih kuat. Kelemahan masing-masing weak learners dikompensasi dengan memfokuskan pada sampel yang dianggap sulit untuk diklasifikasikan oleh weak learner sebelumnya.
+
+    Berikut adalah penjelasan singkat tentang cara kerja AdaBoostClassifier:
+
+    1. Inisialisasi bobot: Setiap sampel dalam dataset diberi bobot awal yang sama.
+
+    2. Pelatihan weak learners: Weak learner pertama dilatih pada dataset dengan bobot awal. Mereka menghasilkan model prediksi sederhana.
+
+    3. Evaluasi dan pembaruan bobot: Bobot dihitung ulang berdasarkan seberapa baik weak learner pertama mengklasifikasikan sampel. Sampel yang salah diklasifikasikan diberi bobot yang lebih tinggi untuk fokus pada mereka dalam langkah berikutnya.
+
+    4. Pelatihan weak learners berikutnya: Weak learner kedua dilatih pada dataset dengan bobot yang diperbarui. Proses ini diulang untuk weak learners yang lain, dengan bobot diperbarui setiap kali.
+
+    5. Pemilihan bobot model: Bobot setiap weak learner dihitung berdasarkan akurasi mereka. Weak learners dengan akurasi yang lebih tinggi diberi bobot yang lebih tinggi dalam pemilihan model akhir.
+
+    6. Penggabungan model: Prediksi dari setiap weak learner dikombinasikan berdasarkan bobot mereka untuk menghasilkan prediksi final.
+
+    Kelebihan AdaBoostClassifier:
+
+    1. Performa yang tinggi: Dalam banyak kasus, AdaBoostClassifier menghasilkan kinerja yang lebih baik dibandingkan dengan penggunaan weak learner individu.
+
+    2. Tidak ada kebutuhan untuk penyetelan parameter yang rumit: AdaBoostClassifier secara otomatis menyesuaikan bobot sampel dan bobot model untuk menghasilkan model akhir yang kuat.
+
+    3. Mampu menangani data dengan fitur kompleks: AdaBoostClassifier dapat mengatasi data yang memiliki fitur kompleks dan tidak linear.
+
+    Kekurangan AdaBoostClassifier:
+
+    1. Rentan terhadap overfitting: Jika jumlah weak learners terlalu besar atau dataset memiliki noise yang tinggi, AdaBoostClassifier dapat cenderung overfitting pada data pelatihan.
+
+    2. Sensitif terhadap outliers: Keberadaan outliers dalam dataset dapat mempengaruhi performa AdaBoostClassifier karena bobotnya diperbarui berdasarkan kesalahan klasifikasi.
+
+    3. Sensitif terhadap data yang tidak seimbang: Jika dataset memiliki kelas yang tidak seimbang secara signifikan, AdaBoostClassifier cenderung memberikan bobot yang lebih tinggi pada kelas mayoritas dan mungkin memiliki kinerja yang buruk pada kelas minoritas.
+
+    Hasil dari pelatihan model Boosting Classifier pada data latih akan dievaluasi menggunakan metrik `accuracy_score()` dan akan disimpan pada variabel `models.loc['Boosting', 'train_accuracy_score']`.
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
 
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
+Untuk mengevaluasi model yang telah dilatih, proyek ini menggunakan metrik `accuracy`. Metrik akurasi adalah ukuran yang digunakan untuk mengevaluasi sejauh mana model machine learning dapat memprediksi dengan benar kelas target pada data yang diberikan.
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+### Metrik Accuracy
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+Metrik akurasi adalah salah satu metrik evaluasi yang digunakan dalam model machine learning untuk mengukur seberapa akurat model dalam melakukan prediksi kelas target. Akurasi mengukur sejauh mana model berhasil memprediksi dengan benar kelas target pada data yang diberikan.
 
-**---Ini adalah bagian akhir laporan---**
+Untuk menghitung akurasi, langkah pertama adalah membandingkan setiap prediksi yang dilakukan oleh model dengan nilai sebenarnya dari kelas target. Kemudian, jumlah prediksi yang benar dibagi dengan total jumlah prediksi, dan hasilnya dikalikan dengan 100 untuk mendapatkan persentase akurasi.
 
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+Berikut rumus matematika untuk menghitung akurasi:
+
+Akurasi = (Jumlah prediksi yang benar / Total jumlah prediksi) * 100
+
+Misalnya, jika terdapat 100 data yang diprediksi oleh model, dan model benar-benar memprediksi dengan benar 80 dari 100 data tersebut, maka akurasi model adalah 80%.
+
+Akurasi adalah metrik evaluasi yang penting, terutama dalam masalah klasifikasi di mana kelas target yang diinginkan adalah biner (dua kelas).
+
+Pada proyek ini, nilai accuracy dari setiap model akan digunakan untuk membandingkan model mana yang terbaik. Rentang pada nilai akurasi yaitu dari 0 sampai 1. Nilai accuracy model yang paling mendekati 1 akan menjadi model yang terbaik.
+
+Hasil dari evaluasi model menggunakan metrik akurasi sebagai berikut:
+
+Tabel 1. Nilai accuracy data latih dan data uji
+
+|                  | **train_accuracy_score** | **test_accuracy_score** |
+| ---------------- | ------------------------ | ----------------------- |
+| **KNN**          | 0.9691                   | 0.9597                  |
+| **RandomForest** | 0.9989                   | 0.9675                  |
+| **Boosting**     | 0.9709                   | 0.9707                  |
+
+Berdasarkan tabel di atas, dapat diambil beberapa kesimpulan:
+
+1. Model KNN memiliki tingkat akurasi yang cukup tinggi baik pada data latihan maupun pada data uji. Dalam hal ini, akurasi model pada data latihan adalah 0,9691, sedangkan pada data uji adalah 0,9597. Hal ini menunjukkan bahwa model KNN berhasil menghasilkan prediksi yang akurat pada data baru yang belum pernah dilihat sebelumnya.
+
+2. Model Random Forest memiliki tingkat akurasi yang sangat tinggi pada data latihan dengan nilai 0,9989, yang menunjukkan bahwa model ini hampir sempurna dalam mempelajari pola dari data latihan. Namun, meskipun tingkat akurasi pada data uji (0,9675) tidak sebaik pada data latihan, model ini masih tetap berhasil memberikan hasil yang cukup baik pada data baru.
+
+3. Model Boosting juga menunjukkan tingkat akurasi yang tinggi pada data latihan (0,9709) dan data uji (0,9707). Hal ini menunjukkan bahwa model Boosting mampu memberikan prediksi yang konsisten pada kedua set data tersebut.
+
+Dalam kesimpulan, semua model yang dievaluasi dalam tabel tersebut memiliki tingkat akurasi yang relatif tinggi. Namun, model Random Forest memiliki tingkat akurasi tertinggi pada data latihan, sedangkan model Boosting memiliki tingkat akurasi yang cukup tinggi dan konsisten pada kedua set data. Pilihan model terbaik tergantung pada konteks dan kebutuhan spesifik dari masalah yang dihadapi. Sehingga model terbaik yang dipilih yaitu model *Boosting* karena dapat menunjukan hasil yang konsisten pada evaluasi data uji dan data latih.
+
+
+
 
 
 
