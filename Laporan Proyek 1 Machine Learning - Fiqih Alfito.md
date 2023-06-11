@@ -80,31 +80,86 @@ Terdapat beberapa tahapan dalam memahami dataset tersebut, yaitu:
 
     Dari hasil analisis, maka diperoleh kesimpulan sebagai berikut:
 
-    1. fitur `gender`. 
+    - Fitur `gender`. 
     
-    ![Screenshot_20230611_215522](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/557902dc-33f3-4001-b90c-40cc33e67459)
+        ![Screenshot_20230611_215522](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/557902dc-33f3-4001-b90c-40cc33e67459)
     
-    Gambar 1. Analisis univariat fitur *gender*
+        Gambar 1. Analisis univariat fitur `gender`
     
-    Tabel 1. Hasil analisis univariat fitur *gender*
+        Tabel 1. Hasil analisis univariat fitur *gender*
     
-    | jumlah sampel | persentase |
-    | ------------- | ---------- |
-    | 88667         | 92.2       |
-    | 7461          | 7.8        |
+        |               | jumlah sampel | persentase |
+        | ------------- | ------------- | ---------- |
+        | Female        | 56161         | 58.4       |
+        | Male          | 39967         | 41.6       |
     
-    Berdasarkan gambar 1 diatas. Dari seluruh pasien, jumlah perempuan lebih banyak dibandingan dengan laki-laki.
+        Berdasarkan gambar 1 diatas. Dari seluruh pasien, jumlah perempuan lebih banyak dibandingan dengan laki-laki. Berdasarkan tabel 1, jumlah perempuan sebanyak 58.4% dan 41.6% adalah laki-laki.
     
-    2. fitur `hypertension`. 
+    - Fitur `hypertension`. 
+    
+        ![Screenshot_20230611_222157](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/de6551a5-1355-4e16-a5b3-8d0b74287e2a)
+
+        Gambar 2. Analisis univariat fitur `hypertension`
+    
+        Tabel 2. Hasil analisis univariat fitur `hypertension`
+    
+        |   | jumlah sampel | persentase |
+        | - | ------------- | ---------- |
+        | 0 | 88667         | 92.2       |
+        | 1 | 7461          | 7.8        |
+    
+        Berdasarkan gambar 2 diatas. Dari seluruh pasien, jumlah pasien dengan kondisi hipertensi lebih sedikit dibandingan dengan yang tidak hipertensi. Berdasarkan tabel 2, jumlah pasien dengan kondisi hipertensi sebanyak 7.8% dan 92.2% adalah pasien yang tidak memiliki kondisi hipertensi.
     
     
-     
-    Berdasarkan gambar 2 diatas. Dari seluruh pasien, pasien dengan kondisi hipertensi hanya sedikit, sebesar 7.8% saja.
-    
-    
-    6. fitur `heart_disease`. Dari seluruh pasien, pasien yang mempunyai penyakit jantung sangat sedikit yaitu sebesar 4.1%.
-    7. fitur `smoking_history`. Dari seluruh pasien, 70% pasien tidak pernah merokok.
-    8. fitur `diabetes`. Dari seluruh pasien, pasien yang mengalami diabetes sebesar 8.8%.
+    - Fitur `heart_disease`.
+        
+        ![Screenshot_20230611_223409](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/c2329299-5f65-4fbc-b44c-133658c51814)
+        
+        Gambar 3. Analisis univariat fitur `heart_disease`
+        
+        Tabel 3. Hasil analisis univariat fitur `heart_disease`
+        
+        |   | jumlah sampel | persentase |
+        | - | ------------- | ---------- |
+        | 0 | 92205         | 95.9       |
+        | 1 | 3923          | 4.1        |
+        
+        Berdasarkan gambar 3 diatas. Dari seluruh pasien, jumlah pasien yang mempunyai penyakit jantung lebih sedikit dibandingan dengan yang tidak mempunyai penyakit jantung. Berdasarkan tabel 3, jumlah pasien yang mempunyai penyakit jantung sebanyak 4.1% dan 95.9% adalah pasien yang tidak mempunyai penyakit jantung.
+   
+    - Fitur `smoking_history`. Dari seluruh pasien, 70% pasien tidak pernah merokok.
+            
+        ![Screenshot_20230611_223734](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/da91d2b9-f277-4262-b8e5-cb491124842b)
+        
+        Gambar 4. Analisis univariat fitur `smoking_history`
+        
+        Tabel 4. Hasil analisis univariat fitur `smoking_history`
+        
+        |              | jumlah sampel  | persentase |
+        | ------------ | -------------  | ---------- |
+        | never        |         34395  |       35.8 |
+        | No Info      |         32881  |       34.2 |
+        | former       |          9299  |        9.7 |
+        | current      |          9197  |        9.6 |
+        | not current  |          6359  |        6.6 |
+        | ever         |          3997  |        4.2 |
+        
+        Berdasarkan gambar 4 diatas. Dari seluruh pasien, pasien yang tidak pernah merokok lebih dominan. Berdasarkan tabel 4, Sebesar 70% pasien tidak pernah merokok. 
+        
+    - Fitur `diabetes`
+            
+        ![Screenshot_20230611_224419](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/8f1d6944-cfbb-46a5-baa8-466d78fb26ef)
+        
+        Gambar 5. Analisis univariat fitur `diabetes`
+        
+        Tabel 5. Hasil analisis univariat fitur `diabetes`
+        
+        |   | jumlah sampel | persentase |
+        | - | ------------- | ---------- |
+        | 0 | 87646         | 91.2       |
+        | 1 | 8482          | 8.8        |
+               
+        
+        Berdasarkan gambar 5 diatas. Dari seluruh pasien, jumlah pasien yang menderita diabetes lebih sedikit dari pada pasien yang tidak menderita diabetes. Berdasarkan tabel 5, pasien yang tidak menderita diabetes sebesar 91.2% dam 8.8% adalah pasien yang menderita diabetes.
      
     
 4. *Bivariate Analysis*
