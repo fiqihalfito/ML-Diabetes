@@ -236,8 +236,14 @@ Terdapat beberapa tahapan dalam memahami dataset tersebut, yaitu:
 5. *Multivariate Analysis*
 
     Analisis multivariat merujuk pada kumpulan teknik statistik yang digunakan untuk menganalisis dan memahami hubungan antara beberapa fitur secara simultan. Berbeda dengan analisis univariat (yang berfokus pada satu fitur) atau analisis bivariat (yang mempelajari hubungan antara dua fitur), analisis multivariat mempertimbangkan interaksi dan ketergantungan antara tiga atau lebih fitur. Dalam kasus ini, analisis multivariate digunakan seberapa besar korelasi semua fitur terhadap fitur diabetes agar fitur yang memiliki korelasi yang kecil dapat disingkirkan.
+    
+    Untuk evaluasi skor korelasi antar fitur khususnya fitur numerik, peneliti menggunakan fungsi `corr()` lalu skor yang didapat akan ditampilkan dalam diagram heatmap agar mudah dibaca.
+    
+    ![Screenshot_20230611_231927](https://github.com/fiqihalfito/ML-Diabetes/assets/112739333/a27338eb-6a61-4993-850a-7dbebe00e9f0)
+    
+    Gambar 14. Matriks korelasi pada fitur numerik
 
-    Dari hasil analisis, fitur ``heart_disease`` memiliki korelasi paling kecil. Selanjutnya fitur tersebut di-*drop*. 
+    Berdasarkan gambar 14 di atas, dari hasil analisis, fitur ``heart_disease`` memiliki korelasi paling kecil. Selanjutnya fitur tersebut di-*drop*. Maka sekarang fitur yang tersisa adalah `gender`, `age`, `hypertension`, `smoking_history`, `bmi`, `HbA1c_level`, `blood_glucose_level`, dan `diabetes`. 
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
