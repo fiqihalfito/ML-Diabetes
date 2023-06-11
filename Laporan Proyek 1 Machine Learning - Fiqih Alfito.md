@@ -243,7 +243,7 @@ Terdapat beberapa tahapan dalam memahami dataset tersebut, yaitu:
     
     Gambar 14. Matriks korelasi pada fitur numerik
 
-    Berdasarkan gambar 14 di atas, dari hasil analisis, fitur ``heart_disease`` memiliki korelasi paling kecil. Selanjutnya fitur tersebut di-*drop*. Maka sekarang fitur yang tersisa adalah `gender`, `age`, `hypertension`, `smoking_history`, `bmi`, `HbA1c_level`, `blood_glucose_level`, dan `diabetes`. 
+    Berdasarkan gambar 14 di atas, dari hasil analisis, fitur ``heart_disease`` memiliki korelasi paling kecil karena skornya mendekati angka 0. Koefisien korelasi berkisar antara -1 dan +1. Ia mengukur kekuatan hubungan antara dua variabel serta arahnya (positif atau negatif). Mengenai kekuatan hubungan antar variabel, semakin dekat nilainya ke 1 atau -1, korelasinya semakin kuat. Sedangkan, semakin dekat nilainya ke 0, korelasinya semakin lemah. Selanjutnya fitur tersebut di-*drop*. Maka sekarang fitur yang tersisa adalah `gender`, `age`, `hypertension`, `smoking_history`, `bmi`, `HbA1c_level`, `blood_glucose_level`, dan `diabetes`. 
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
