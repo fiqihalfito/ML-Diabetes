@@ -266,7 +266,7 @@ Berikut persiapan data yang dilakukan yaitu:
 
     *Sklearn* sudah menyiapakan fungsi untuk membagi data latih dan data uji yaitu ``train_test_split()``. Lalu lakukan pemisahan dengan fungsi tersebut, maka data tersebut akan terpisah dengan ditandai nama variabel *train* dan *test*. 
     
-    Berhubung ukuran dataset cukup besar, maka rasio pembagian data latih dan data uji yaitu 80:20. Total data sebelumnya sebesar 96128. Setelah dibagi dengan rasio 80:20, maka total data latih sebesar 86515 dan data uji sebesar 9613.
+    Berhubung ukuran dataset cukup besar, maka rasio pembagian data latih dan data uji yaitu 90:10. Umumnya rasio yang digunakan 80:20 jika dataset memiliki sedikit data. Total data sebelumnya sebesar 96128. Setelah dibagi dengan rasio 90:10, maka total data latih sebesar 86515 dan data uji sebesar 9613.
 
     Dengan membagi data menjadi subset pelatihan dan pengujian, kita dapat menghindari penilaian yang terlalu optimis dan mendapatkan perkiraan yang lebih realistis tentang seberapa baik model akan berperforma pada data yang tidak pernah dilihat sebelumnya.
 
