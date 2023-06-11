@@ -60,6 +60,8 @@ Terdapat beberapa tahapan dalam memahami dataset tersebut, yaitu:
 
     library Pandas menyediakan fungsi untuk menghapus baris duplikat yaitu : 
     > `pd.drop_duplicates()`
+    
+    Setelah data duplikasi dihapus, jumlah data tersisa 96146.
 
 2. periksa *missing value*
 
@@ -67,6 +69,8 @@ Terdapat beberapa tahapan dalam memahami dataset tersebut, yaitu:
 
     Untuk mengetahui apakah suatu fitur memiliki nilai kosong atau tidak, berikut fungsi yang digunakan :
     > `pd.isnull().sum()`
+    
+    karena tidak ada nilai yang kosong, maka jumlah data tetap 96146.
 
 3. *Univariate Analysis*
 
@@ -82,11 +86,25 @@ Terdapat beberapa tahapan dalam memahami dataset tersebut, yaitu:
     
     Gambar 1. Analisis univariat fitur *gender*
     
-    3. Dari seluruh pasien, jumlah perempuan lebih banyak dibandingan dengan laki-laki.
-    4. fitur `hypertension`. Dari seluruh pasien, pasien dengan kondisi hipertensi hanya sedikit, sebesar 7.8% saja.
-    5. fitur `heart_disease`. Dari seluruh pasien, pasien yang mempunyai penyakit jantung sangat sedikit yaitu sebesar 4.1%.
-    6. fitur `smoking_history`. Dari seluruh pasien, 70% pasien tidak pernah merokok.
-    7. fitur `diabetes`. Dari seluruh pasien, pasien yang mengalami diabetes sebesar 8.8%.
+    Tabel 1. Hasil analisis univariat fitur *gender*
+    
+    | jumlah sampel | persentase |
+    | ------------- | ---------- |
+    | 88667         | 92.2       |
+    | 7461          | 7.8        |
+    
+    Berdasarkan gambar 1 diatas. Dari seluruh pasien, jumlah perempuan lebih banyak dibandingan dengan laki-laki.
+    
+    2. fitur `hypertension`. 
+    
+    
+     
+    Berdasarkan gambar 2 diatas. Dari seluruh pasien, pasien dengan kondisi hipertensi hanya sedikit, sebesar 7.8% saja.
+    
+    
+    6. fitur `heart_disease`. Dari seluruh pasien, pasien yang mempunyai penyakit jantung sangat sedikit yaitu sebesar 4.1%.
+    7. fitur `smoking_history`. Dari seluruh pasien, 70% pasien tidak pernah merokok.
+    8. fitur `diabetes`. Dari seluruh pasien, pasien yang mengalami diabetes sebesar 8.8%.
      
     
 4. *Bivariate Analysis*
