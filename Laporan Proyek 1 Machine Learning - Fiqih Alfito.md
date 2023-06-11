@@ -264,7 +264,9 @@ Berikut persiapan data yang dilakukan yaitu:
 
     Selanjutnya pilih fitur target atau fitur yang akan dijadikan prediksi yaitu fitur `diabetes` lalu tandai sebagai variabel "**y**". Fitur-fitur selain fitur target ditandai dengan variabel "**X**".
 
-    *Sklearn* sudah menyiapakan fungsi untuk membagi data latih dan data uji yaitu ``train_test_split()``. Lalu lakukan pemisahan dengan fungsi tersebut, maka data tersebut akan terpisah dengan ditandai nama variabel *train* dan *test*.
+    *Sklearn* sudah menyiapakan fungsi untuk membagi data latih dan data uji yaitu ``train_test_split()``. Lalu lakukan pemisahan dengan fungsi tersebut, maka data tersebut akan terpisah dengan ditandai nama variabel *train* dan *test*. 
+    
+    Berhubung ukuran dataset cukup besar, maka rasio pembagian data latih dan data uji yaitu 80:20. Total data sebelumnya sebesar 96128. Setelah dibagi dengan rasio 80:20, maka total data latih sebesar 86515 dan data uji sebesar 9613.
 
     Dengan membagi data menjadi subset pelatihan dan pengujian, kita dapat menghindari penilaian yang terlalu optimis dan mendapatkan perkiraan yang lebih realistis tentang seberapa baik model akan berperforma pada data yang tidak pernah dilihat sebelumnya.
 
@@ -304,6 +306,10 @@ Pada tahap *modeling*, digunakan beberapa algoritma klasifikasi untuk memprediks
     2. Sensitif terhadap data yang tidak relevan: K-NN dapat menjadi sensitif terhadap data yang tidak relevan dalam dataset. Data yang tidak relevan dapat menyebabkan distorsi dalam perhitungan jarak dan menghasilkan prediksi yang tidak akurat.
 
     3. Memerlukan pemrosesan data yang tepat: Sebelum menggunakan K-NN, sering kali diperlukan pemrosesan data untuk menghilangkan atribut yang tidak relevan, mengisi nilai yang hilang, atau melakukan normalisasi. Pemrosesan data yang tepat dapat membantu meningkatkan kinerja K-NN.
+    
+    Parameter yang digunakan :
+    
+    - `n_neighbors`: Parameter ini menentukan jumlah tetangga terdekat yang akan digunakan dalam proses klasifikasi. Nilai yang umumnya digunakan adalah bilangan ganjil untuk menghindari situasi kesetimbangan kelas. Jumlah tetangga yang terlalu rendah dapat menghasilkan model yang sensitif terhadap noise, sementara jumlah tetangga yang terlalu tinggi dapat menghasilkan model yang terlalu umum. Untuk proyek ini, model ini menggunakan nilai default yaitu 5. Artinya, KNN Classifier akan mempertimbangkan 5 tetangga terdekat dalam menghasilkan prediksi.
 
     Hasil dari pelatihan model K-NN Classifier pada data latih akan dievaluasi menggunakan metrik `accuracy_score()` dan akan disimpan pada variabel `models.loc['KNN', 'train_accuracy_score']`.
 
@@ -330,6 +336,11 @@ Pada tahap *modeling*, digunakan beberapa algoritma klasifikasi untuk memprediks
     3. Overfitting pada Data dengan Fitur Lebih Banyak: Jika dataset memiliki jumlah fitur yang sangat besar dibandingkan dengan jumlah sampel, Random Forest Classifier dapat mengalami overfitting. Dalam kasus ini, algoritma cenderung terlalu menyesuaikan diri dengan data pelatihan dan kinerjanya pada data yang tidak dikenal dapat menurun.
 
     4. Pengaturan Parameter yang Penting: Random Forest Classifier memiliki beberapa parameter yang perlu dikonfigurasi dengan benar, seperti jumlah pohon dalam ensemble dan kedalaman maksimum setiap pohon. Pengaturan parameter yang tidak tepat dapat mempengaruhi kinerja model secara keseluruhan.
+
+    Parameter yang digunakan :
+    
+    - `n_estimators`: Parameter ini menentukan jumlah pohon keputusan yang akan dibangun dalam model Random Forest. Semakin banyak pohon yang digunakan, semakin kompleks model dan waktu pelatihannya akan meningkat. Untuk proyek ini, model ini menggunakan nilai default yaitu 100. Artinya, Random Forest Classifier akan menggunakan 100 pohon keputusan dalam menghasilkan prediksi.
+    - `max_depth`: Parameter ini menentukan kedalaman maksimum dari setiap pohon dalam model. Kedalaman yang lebih dalam dapat menghasilkan model yang lebih kompleks, tetapi juga dapat menyebabkan overfitting. Jika tidak ditentukan, pohon tidak memiliki batasan kedalaman dan akan terus membagi sampai semua node menjadi murni atau sampai jumlah sampel minimum untuk split tidak terpenuhi. Untuk proyek ini, model tidak menentukan parameter `max_depth`, untuk itu model akan memasang nilai default yaitu `None`.
 
     Hasil dari pelatihan model Random Forest Classifier pada data latih akan dievaluasi menggunakan metrik `accuracy_score()` dan akan disimpan pada variabel `models.loc['RandomForest', 'train_accuracy_score']`.
 
@@ -367,6 +378,11 @@ Pada tahap *modeling*, digunakan beberapa algoritma klasifikasi untuk memprediks
     2. Sensitif terhadap outliers: Keberadaan outliers dalam dataset dapat mempengaruhi performa AdaBoostClassifier karena bobotnya diperbarui berdasarkan kesalahan klasifikasi.
 
     3. Sensitif terhadap data yang tidak seimbang: Jika dataset memiliki kelas yang tidak seimbang secara signifikan, AdaBoostClassifier cenderung memberikan bobot yang lebih tinggi pada kelas mayoritas dan mungkin memiliki kinerja yang buruk pada kelas minoritas.
+
+    Parameter yang digunakan :
+    
+    - `n_estimators`: Parameter ini mengindikasikan jumlah maksimum dari estimator (weak learner) yang akan digunakan dalam ensemble. Semakin besar nilai n_estimators, semakin kompleks model akan menjadi. Namun, nilai yang terlalu besar juga dapat menyebabkan overfitting. Pada proyek ini, model ini menggunakan nilai default yaitu 50. Dalam AdaBoostClassifier, ensemble terdiri dari sejumlah estimator yang dilatih secara berurutan. Estimator adalah model pembelajaran mesin sederhana yang digunakan dalam AdaBoost untuk mempelajari aturan prediksi yang lebih kompleks. Pada setiap iterasi, estimator baru ditambahkan ke ensemble dengan tujuan untuk meningkatkan performa prediksi keseluruhan. Setiap estimator fokus pada sampel yang sulit diprediksi oleh estimator sebelumnya dengan memberikan bobot lebih besar pada sampel-sampel tersebut.
+    - `learning_rate`: Parameter ini mengontrol kontribusi setiap estimator terhadap keseluruhan model. Nilai learning_rate yang lebih kecil akan menghasilkan model yang lebih konservatif dengan meningkatkan stabilitas, tetapi juga memerlukan lebih banyak estimator untuk mencapai performa yang setara. Untuk proyek ini, model ini menetapkan nilai `learning_rate` defaultnya adalah 1.
 
     Hasil dari pelatihan model Boosting Classifier pada data latih akan dievaluasi menggunakan metrik `accuracy_score()` dan akan disimpan pada variabel `models.loc['Boosting', 'train_accuracy_score']`.
 
